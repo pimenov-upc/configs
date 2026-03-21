@@ -1,0 +1,41 @@
+{
+  "name": "configs",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "UPC",
+  "type": "module",
+  "scripts": {
+    "lint:eslint": "eslint --config eslint/eslint.config.ts .",
+    "lint:eslint:fix": "eslint --config eslint/eslint.config.ts . --fix",
+    "lint:oxlint": "oxlint --config oxlint/oxlint.config.ts .",
+    "lint:oxlint:fix": "oxlint --config oxlint/oxlint.config.ts . --fix",
+    "lint:stylelint": "stylelint \"**/*.{css,scss,sass,vue}\" --config stylelint/stylelint.config.mjs",
+    "lint:stylelint:fix": "stylelint \"**/*.{css,scss,sass,vue}\" --config stylelint/stylelint.config.mjs --fix",
+    "format:prettier": "prettier . --config prettier/.prettierrc --write",
+    "format:prettier:check": "prettier . --config prettier/.prettierrc --check",
+    "format:oxfmt": "oxfmt .",
+    "format:oxfmt:check": "oxfmt . --check"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^25.3.3",
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "eslint": "^10.0.2",
+    "jiti": "^2.6.1",
+    "oxfmt": "^0.35.0",
+    "oxlint": "^1.50.0",
+    "oxlint-tsgolint": "^0.15.0",
+    "prettier": "^3.8.1",
+    "stylelint": "^17.4.0",
+    "stylelint-config-recess-order": "^7.6.1",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "stylelint-order": "^7.0.1",
+    "stylelint-prettier": "^5.0.3",
+    "stylelint-scss": "^7.0.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1"
+  }
+}

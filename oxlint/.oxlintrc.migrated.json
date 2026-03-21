@@ -1,0 +1,52 @@
+{
+  "plugins": ["unicorn", "typescript", "oxc", "vue"],
+  "categories": {},
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-undef": "off",
+    "typescript/ban-ts-comment": "off",
+    "typescript/no-require-imports": "off",
+    "typescript/no-explicit-any": "off",
+    "typescript/no-empty-object-type": "off",
+    "vue/multi-word-component-names": "error",
+    "vue/attribute-hyphenation": "error",
+    "vue/no-v-html": "warn",
+    "vue/v-on-event-hyphenation": "error"
+  },
+  "settings": {
+    "jsx-a11y": {
+      "polymorphicPropName": null,
+      "components": {},
+      "attributes": {}
+    },
+    "next": {
+      "rootDir": []
+    },
+    "react": {
+      "formComponents": [],
+      "linkComponents": [],
+      "version": null,
+      "componentWrapperFunctions": []
+    },
+    "jsdoc": {
+      "ignorePrivate": false,
+      "ignoreInternal": false,
+      "ignoreReplacesDocs": true,
+      "overrideReplacesDocs": true,
+      "augmentsExtendsReplacesDocs": false,
+      "implementsReplacesDocs": false,
+      "exemptDestructuredRootsFromChecks": false,
+      "tagNamePreference": {}
+    },
+    "vitest": {
+      "typecheck": false
+    }
+  },
+  "env": {
+    "builtin": true,
+    "browser": true,
+    "node": true
+  },
+  "globals": {},
+  "ignorePatterns": ["node_modules", ".nuxt", ".output", "dist", "public"]
+}

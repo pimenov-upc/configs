@@ -1,0 +1,127 @@
+{
+  "security.workspace.trust.untrustedFiles": "open",
+
+  "cSpell.language": "en,uk",
+  "cSpell.userWords": ["LASTEXITCODE", "metroui", "shortstat"],
+
+  "files.dialog.defaultPath": "c:\\Users\\user_name\\Projects\\",
+  "files.autoSave": "onFocusChange",
+  "files.eol": "\n",
+
+  "explorer.compactFolders": false,
+  "accessibility.verbosity.terminal": false,
+  "accessibility.hideAccessibleView": true,
+
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.chat.newWorkspace.useContext7": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+
+  "chat.editing.confirmEditRequestRemoval": false,
+  "chat.agent.maxRequests": 100,
+  "chat.mcp.serverSampling": {},
+  "chat.mcp.autostart": "newAndOutdated",
+  "chat.agent.thinkingStyle": "collapsed",
+  "chat.useAgentSkills": true,
+  "chat.viewSessions.orientation": "stacked",
+
+  "terminal.integrated.accessibleViewPreserveCursorPosition": true,
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.middleClickBehavior": "paste",
+  "terminal.integrated.mouseWheelZoom": true,
+
+  "git.confirmSync": false,
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+
+  "i18n-ally.localesPaths": ["frontend-nuxt/src/locales"],
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.sourceLanguage": "en",
+  "i18n-ally.displayLanguage": "uk",
+  "i18n-ally.enabledFrameworks": ["vue"],
+  "i18n-ally.enabledParsers": ["json"],
+  "i18n-ally.pathMatcher": "{locale}.json",
+  "i18n-ally.namespace": true,
+
+  "terminal.integrated.stickyScroll.enabled": false,
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.localEchoExcludePrograms": ["vim", "vi", "nano", "tmux", "edit"],
+  "terminal.integrated.autoReplies": {
+    "Terminate batch job (Y/N)": "Y\r"
+  },
+  "terminal.integrated.sendKeybindingsToShell": true,
+
+  "scm.repositories.explorer": true,
+  "scm.repositories.selectionMode": "single",
+  "debug.breakpointsView.presentation": "tree",
+
+  "projectManager.groupList": true,
+  "projectManager.showParentFolderInfoOnDuplicates": true,
+  "projectManager.git.baseFolders": ["c:\\Users\\user_name\\Projects\\"],
+  "projectManager.tags": ["Personal", "Work", "Important", "High Priority", "Low Priority"],
+  "projectManager.git.ignoredFolders": ["node_modules", "out", "typings", "test", "dist", "build"],
+  "projectManager.vscode.baseFolders": ["c:\\Users\\user_name\\Projects\\"],
+  "projectManager.vscode.ignoredFolders": [
+    "node_modules",
+    "out",
+    "typings",
+    "test",
+    "dist",
+    "build"
+  ],
+
+  "workbench.startupEditor": "none",
+  "workbench.tree.indent": 20,
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.colorTheme": "Darcula Theme from IntelliJ",
+  "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-dark",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.alwaysShowEditorActions": true,
+  "workbench.editor.closeOnFileDelete": true,
+  "workbench.editor.defaultBinaryEditor": "default",
+
+  "markdown.preview.openMarkdownLinks": "inEditor",
+  "markdown-preview-github-styles.lightTheme": "light_colorblind",
+  "markdown-preview-github-styles.darkTheme": "light_colorblind",
+  "markdown-preview-github-styles.colorTheme": "light",
+
+  "notebook.formatOnSave.enabled": true,
+
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.tabCompletion": "onlySnippets",
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', Consolas, 'Courier New', monospace",
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.codeActions.triggerOnFocusChange": true,
+  "editor.formatOnPaste": true,
+  "editor.stickyScroll.enabled": false,
+
+  "oxc.configPath": "",
+  "[vue]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[tpl]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+
+  "files.associations": {
+    "*.tpl": "ftl"
+  }
+}

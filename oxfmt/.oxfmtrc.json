@@ -1,0 +1,36 @@
+{
+  "$schema": "../node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": true,
+  "quoteProps": "consistent",
+  "jsxSingleQuote": false,
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "arrowParens": "always",
+  "htmlWhitespaceSensitivity": "css",
+  "vueIndentScriptAndStyle": true,
+  "endOfLine": "lf",
+  "singleAttributePerLine": false,
+  "sortPackageJson": false,
+  "insertFinalNewline": true,
+  "ignorePatterns": [],
+  "overrides": [
+    {
+      "files": ["*.json", "*.jsonc", "*.yaml", "*.yml", "*.cmd", "*.sh", "*.ps1"],
+      "options": {
+        "tabWidth": 4
+      }
+    },
+    {
+      "files": ["*.tpl"],
+      "options": {
+        "parser": "html",
+        "htmlWhitespaceSensitivity": "ignore"
+      }
+    }
+  ]
+}
