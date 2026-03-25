@@ -1,34 +1,62 @@
 {
-  "$schema": "../node_modules/oxlint/configuration_schema.json",
-  "plugins": ["typescript", "import", "oxc", "vue", "vitest"],
+  "plugins": ["unicorn", "typescript", "oxc", "vue"],
+  "categories": {},
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-undef": "off",
+    "no-debugger": "warn",
+    "typescript/no-unused-vars": "warn",
+    "typescript/ban-ts-comment": "off",
+    "typescript/no-require-imports": "error",
+    "typescript/no-explicit-any": "warn",
+    "typescript/no-empty-object-type": "warn",
+    "vue/multi-word-component-names": "warn",
+    "vue/attribute-hyphenation": ["error", "always"],
+    "vue/no-v-html": "warn",
+    "vue/v-on-event-hyphenation": "off"
+  },
+  "settings": {
+    "jsx-a11y": {
+      "polymorphicPropName": null,
+      "components": {},
+      "attributes": {}
+    },
+    "next": {
+      "rootDir": []
+    },
+    "react": {
+      "formComponents": [],
+      "linkComponents": [],
+      "version": null,
+      "componentWrapperFunctions": []
+    },
+    "jsdoc": {
+      "ignorePrivate": false,
+      "ignoreInternal": false,
+      "ignoreReplacesDocs": true,
+      "overrideReplacesDocs": true,
+      "augmentsExtendsReplacesDocs": false,
+      "implementsReplacesDocs": false,
+      "exemptDestructuredRootsFromChecks": false,
+      "tagNamePreference": {}
+    },
+    "vitest": {
+      "typecheck": false
+    }
+  },
   "env": {
     "builtin": true,
-    "es2024": true,
     "browser": true,
     "node": true
   },
-  "ignorePatterns": ["node_modules/**", "dist/**", "build/**", "coverage/**"],
-  "rules": {
-    "eqeqeq": "error",
-    "default-case": "error",
-    "default-case-last": "error",
-    "no-var": "error",
-    "prefer-const": "error",
-    "no-debugger": "error",
-    "no-eval": "error",
-    "no-implied-eval": "error",
-    "no-with": "error",
-    "no-array-constructor": "error",
-    "no-object-constructor": "error",
-    "no-new-wrappers": "error",
-    "no-extend-native": "error",
-    "import/no-default-export": "error",
-    "typescript/no-namespace": "error",
-    "typescript/ban-ts-comment": "error",
-    "typescript/no-explicit-any": "warn",
-    "typescript/no-non-null-assertion": "warn",
-    "typescript/use-unknown-in-catch-callback-variable": "error",
-    "typescript/no-wrapper-object-types": "error",
-    "oxc/no-const-enum": "error"
-  }
+  "globals": {},
+  "ignorePatterns": ["node_modules", ".nuxt", ".output", "dist"],
+  "overrides": [
+    {
+      "files": ["**/*.d.ts"],
+      "rules": {
+        "typescript/no-explicit-any": "off"
+      }
+    }
+  ]
 }

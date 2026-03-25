@@ -1,54 +1,69 @@
-import js from '@eslint/js';
+import globals from 'globals';
+import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
+import pluginVue from 'eslint-plugin-vue';
+import vueConfigPrettier from '@vue/eslint-config-prettier';
+import prettier from 'eslint-plugin-prettier/recommended';
 
-export default tseslint.config(
+/** @type {import('eslint').Linter.Config[]} */
+export default [
   {
-    ignores: [
-      '**/node_modules/**',
-      '**/dist/**',
-      '**/build/**',
-      '**/coverage/**',
-      '**/*.d.ts',
-    ],
+    files: ['**/*.{js,mjs,cjs,ts,vue}'],
   },
-  js.configs.recommended,
+  {
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+  },
+  pluginJs.configs.recommended,
+  {
+    rules: {
+      'no-unused-vars': 'warn',
+      'no-undef': 'off',
+      'no-debugger': 'warn',
+    },
+  },
   ...tseslint.configs.recommended,
   {
-    files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.cts'],
-    languageOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
-    },
     rules: {
-      'semi': ['error', 'always'],
-      'quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
-      'curly': ['error', 'all'],
-      'eqeqeq': ['error', 'always', { null: 'ignore' }],
-      'one-var': ['error', 'never'],
-      'no-var': 'error',
-      'prefer-const': ['error', { destructuring: 'all' }],
-      'no-debugger': 'error',
-      'no-eval': 'error',
-      'no-new-wrappers': 'error',
-
-      '@typescript-eslint/no-namespace': 'error',
-      '@typescript-eslint/prefer-namespace-keyword': 'off',
-      '@typescript-eslint/no-require-imports': 'error',
-      '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
-      '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
-      '@typescript-eslint/array-type': ['error', { default: 'array-simple' }],
+      '@typescript-eslint/no-unused-vars': 'warn',
       '@typescript-eslint/no-explicit-any': 'warn',
-      '@typescript-eslint/no-non-null-assertion': 'error',
-      '@typescript-eslint/consistent-type-assertions': ['error', { assertionStyle: 'never' }],
-      '@typescript-eslint/ban-ts-comment': ['error', {
-        'ts-ignore': true,
-        'ts-nocheck': true,
-        'ts-check': false,
-        'ts-expect-error': true,
-      }],
-      '@typescript-eslint/no-inferrable-types': 'error',
-
-      'no-restricted-exports': ['error', { restrictedNamedExports: ['default'] }],
     },
   },
-);
+  ...pluginVue.configs['flat/recommended'],
+  {
+    files: ['**/*.vue'],
+    languageOptions: {
+      parserOptions: {
+        parser: tseslint.parser,
+      },
+    },
+  },
+  {
+    rules: {
+      ...vueConfigPrettier.rules,
+      'vue/multi-word-component-names': 'warn',
+      'vue/attribute-hyphenation': ['error', 'always'],
+      'vue/no-v-html': 'warn',
+      'vue/v-on-event-hyphenation': 'off',
+      '@typescript-eslint/ban-ts-comment': 'off',
+      '@typescript-eslint/no-require-imports': ['error', 'always'],
+      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-empty-object-type': 'warn',
+    },
+  },
+  {
+    files: ['**/*.d.ts'],
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+    },
+  },
+  {
+    ignores: ['node_modules', '.nuxt', '.output', 'dist'],
+  },
+  // prettier will automatically use settings from .prettierrc
+  prettier,
+];

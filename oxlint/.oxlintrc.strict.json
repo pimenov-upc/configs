@@ -2,15 +2,17 @@
   "plugins": ["unicorn", "typescript", "oxc", "vue"],
   "categories": {},
   "rules": {
-    "no-unused-vars": "warn",
+    "no-unused-vars": "error",
     "no-undef": "off",
-    "typescript/ban-ts-comment": "off",
-    "typescript/no-require-imports": "off",
-    "typescript/no-explicit-any": "off",
-    "typescript/no-empty-object-type": "off",
+    "no-debugger": "error",
+    "typescript/no-unused-vars": "error",
+    "typescript/ban-ts-comment": "error",
+    "typescript/no-require-imports": "error",
+    "typescript/no-explicit-any": "error",
+    "typescript/no-empty-object-type": "error",
     "vue/multi-word-component-names": "error",
-    "vue/attribute-hyphenation": "error",
-    "vue/no-v-html": "warn",
+    "vue/attribute-hyphenation": ["error", "always"],
+    "vue/no-v-html": "error",
     "vue/v-on-event-hyphenation": "error"
   },
   "settings": {
@@ -48,5 +50,13 @@
     "node": true
   },
   "globals": {},
-  "ignorePatterns": ["node_modules", ".nuxt", ".output", "dist", "public"]
+  "ignorePatterns": ["node_modules", ".nuxt", ".output", "dist"],
+  "overrides": [
+    {
+      "files": ["**/*.d.ts"],
+      "rules": {
+        "typescript/no-explicit-any": "off"
+      }
+    }
+  ]
 }
