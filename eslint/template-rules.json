@@ -1,0 +1,34 @@
+{
+'rules': {
+            'vue/block-order': [
+                'error',
+                {
+                    order: ['script', 'template', 'style'],
+                },
+            ],
+            'vue/max-attributes-per-line': [
+                'error',
+                {
+                    singleline: 20,
+                    multiline: {
+                        max: 1,
+                    },
+                },
+            ],
+            'vue/html-self-closing': [
+                'error',
+                {
+                    html: {
+                        void: 'always',
+                        normal: 'never',
+                        component: 'always',
+                    },
+                    svg: 'always',
+                    math: 'always',
+                },
+            ],
+            'vue/no-multiple-template-root': 'off',
+            'vue/no-v-html': 'off',
+            'vue/padding-line-between-tags': ['error', [{ blankLine: 'consistent', prev: '*', next: '*' }]],
+        }
+}
