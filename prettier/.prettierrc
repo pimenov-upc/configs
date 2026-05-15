@@ -27,7 +27,8 @@
     {
       "files": ["*.json", "*.jsonc", "*.yaml", "*.yml"],
       "options": {
-        "tabWidth": 4
+        "tabWidth": 2,
+        "trailingComma": "none"
       }
     }
   ]
